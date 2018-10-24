@@ -1,0 +1,1022 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Experimental Xbox emulator">
+      
+      
+        <link rel="canonical" href="http://xqemu.com/getting-started/">
+      
+      
+        <meta name="author" content="xqemu Developers">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.5">
+    
+    
+      
+        <title>Getting Started - XQEMU</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#introduction" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="http://xqemu.com" title="XQEMU" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">games</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                XQEMU
+              </span>
+              <span class="md-header-nav__topic">
+                Getting Started
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/xqemu/xqemu/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      xqemu/xqemu
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+<nav class="md-tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href=".." title="Welcome" class="md-tabs__link md-tabs__link--active">
+        Welcome
+      </a>
+    
+  </li>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../developers/" title="Developers" class="md-tabs__link">
+          Developers
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="http://xqemu.com" title="XQEMU" class="md-nav__button md-logo">
+      
+        <i class="md-icon">games</i>
+      
+    </a>
+    XQEMU
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/xqemu/xqemu/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      xqemu/xqemu
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../screenshots/" title="Screenshots" class="md-nav__link">
+      Screenshots
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+      </label>
+    
+    <a href="./" title="Getting Started" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips" title="Tips" class="md-nav__link">
+    Tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcpx-boot-rom-image" title="MCPX Boot ROM Image" class="md-nav__link">
+    MCPX Boot ROM Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-rom-image-aka-bios" title="Flash ROM Image (aka BIOS)" class="md-nav__link">
+    Flash ROM Image (aka BIOS)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retail-bios" title="Retail BIOS" class="md-nav__link">
+    Retail BIOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-bios" title="Debug BIOS" class="md-nav__link">
+    Debug BIOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-disk-drive-image" title="Hard Disk Drive Image" class="md-nav__link">
+    Hard Disk Drive Image
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-use-a-pre-built-xbox-hdd-image-recommended" title="Option 1: Use a pre-built Xbox HDD image (recommended)" class="md-nav__link">
+    Option 1: Use a pre-built Xbox HDD image (recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-image-your-real-xbox-hdd" title="Option 2: Image your real Xbox HDD" class="md-nav__link">
+    Option 2: Image your real Xbox HDD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-build-a-new-hdd-image-from-scratch" title="Option 3: Build a new HDD image from scratch" class="md-nav__link">
+    Option 3: Build a new HDD image from scratch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-xqemu-from-source" title="Building XQEMU from Source" class="md-nav__link">
+    Building XQEMU from Source
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-on-windows" title="Building on Windows" class="md-nav__link">
+    Building on Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-on-gnulinux" title="Building on GNU/Linux" class="md-nav__link">
+    Building on GNU/Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-on-macos" title="Building on macOS" class="md-nav__link">
+    Building on macOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-xqemu" title="Launch XQEMU" class="md-nav__link">
+    Launch XQEMU
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../input/" title="Input Devices" class="md-nav__link">
+      Input Devices
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../networking/" title="Networking" class="md-nav__link">
+      Networking
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tips/" title="Tips" class="md-nav__link">
+      Tips
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Developers
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Developers
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../developers/" title="Welcome" class="md-nav__link">
+      Welcome
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" title="Introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tips" title="Tips" class="md-nav__link">
+    Tips
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcpx-boot-rom-image" title="MCPX Boot ROM Image" class="md-nav__link">
+    MCPX Boot ROM Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flash-rom-image-aka-bios" title="Flash ROM Image (aka BIOS)" class="md-nav__link">
+    Flash ROM Image (aka BIOS)
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#retail-bios" title="Retail BIOS" class="md-nav__link">
+    Retail BIOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#debug-bios" title="Debug BIOS" class="md-nav__link">
+    Debug BIOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hard-disk-drive-image" title="Hard Disk Drive Image" class="md-nav__link">
+    Hard Disk Drive Image
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-use-a-pre-built-xbox-hdd-image-recommended" title="Option 1: Use a pre-built Xbox HDD image (recommended)" class="md-nav__link">
+    Option 1: Use a pre-built Xbox HDD image (recommended)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-image-your-real-xbox-hdd" title="Option 2: Image your real Xbox HDD" class="md-nav__link">
+    Option 2: Image your real Xbox HDD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-3-build-a-new-hdd-image-from-scratch" title="Option 3: Build a new HDD image from scratch" class="md-nav__link">
+    Option 3: Build a new HDD image from scratch
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-xqemu-from-source" title="Building XQEMU from Source" class="md-nav__link">
+    Building XQEMU from Source
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#building-on-windows" title="Building on Windows" class="md-nav__link">
+    Building on Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-on-gnulinux" title="Building on GNU/Linux" class="md-nav__link">
+    Building on GNU/Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-on-macos" title="Building on macOS" class="md-nav__link">
+    Building on macOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-xqemu" title="Launch XQEMU" class="md-nav__link">
+    Launch XQEMU
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/xqemu/xqemu.com/blob/master/docs/getting-started.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Getting Started</h1>
+                
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>XQEMU is a low-level, full-system emulator which emulates the actual hardware of
+the Xbox; this means that in order to actually run XQEMU, you must have a copy
+of the stuff that a real Xbox needs when it turns on:</p>
+<ol>
+<li>The MCPX Boot ROM image</li>
+<li>The flash ROM image (aka <em>BIOS</em>)</li>
+<li>A properly-formatted hard disk drive image</li>
+<li>Game disc image(s)</li>
+</ol>
+<p>Unfortunately, distributing some of these items would violate copyright laws, so
+you'll need to acquire them on your own.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The XQEMU project does not endorse or promote piracy. We don't link to the
+copyrighted files, or discuss how to acquire them. The best way to acquire
+these files is to dump them from <em>your real, physical Xbox</em>. Please don't
+ask us how to get them.</p>
+</div>
+<h3 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link">&para;</a></h3>
+<h4 id="mcpx-boot-rom-image">MCPX Boot ROM Image<a class="headerlink" href="#mcpx-boot-rom-image" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span>MD5 (mcpx_1.0.bin) = d49c52a4102f6df7bcf8d0617ac475ed
+</pre></div>
+
+
+<p>If your MCPX dump has an MD5 of <code>196a5f59a13382c185636e691d6c323d</code>, you dumped
+it badly and it's a couple of bytes off. It should start with 0x33 0xC0 and end
+with 0x02 0xEE.</p>
+<h4 id="flash-rom-image-aka-bios">Flash ROM Image (aka BIOS)<a class="headerlink" href="#flash-rom-image-aka-bios" title="Permanent link">&para;</a></h4>
+<p>Xbox 1.0 compatible bios (cromwell, 3944, 4034, 4036, ...). You can use a retail
+or debug image. Just like a real Xbox, running an unmodified retail bios will
+not allow booting unofficial software.</p>
+<p>People have reported most success using the modified retail "COMPLEX 4627" BIOS.</p>
+<h5 id="retail-bios">Retail BIOS<a class="headerlink" href="#retail-bios" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span>1M dump: MD5 (3944.bin) = e8b39b98cf775496c1c76e4f7756e6ed
+</pre></div>
+
+
+<p><em>or sometimes</em></p>
+<div class="codehilite"><pre><span></span>256k dump: MD5 (3944.bin) = 542c62cb976a4993c8c5027dff9638ce
+</pre></div>
+
+
+<h5 id="debug-bios">Debug BIOS<a class="headerlink" href="#debug-bios" title="Permanent link">&para;</a></h5>
+<p>People have reported success with the 'COMPLEX 4627' modified debug bios. It's
+convenient to note that this bios does not necessarily require a <em>populated</em>
+hard disk image to load an application from DVD (though an empty drive still
+needs to be attached), so you can skip the next step in some cases.</p>
+<div class="codehilite"><pre><span></span>v1.0.2 1M dump: MD5 (Complex_4627Debug.bin) = 19b5c6d3d42a707bba620634fe6d4baf
+</pre></div>
+
+
+<p><em>or sometimes</em></p>
+<div class="codehilite"><pre><span></span>1MB dump: MD5 (complex_4627debug.bin) = e8dd61cc6abdbd06aac185e371312dc1
+</pre></div>
+
+
+<h4 id="hard-disk-drive-image">Hard Disk Drive Image<a class="headerlink" href="#hard-disk-drive-image" title="Permanent link">&para;</a></h4>
+<p>You have options:</p>
+<h5 id="option-1-use-a-pre-built-xbox-hdd-image-recommended">Option 1: Use a pre-built Xbox HDD image (recommended)<a class="headerlink" href="#option-1-use-a-pre-built-xbox-hdd-image-recommended" title="Permanent link">&para;</a></h5>
+<p>You can use a pre-built 8G Xbox HDD image, free of any copyrighted content, and
+only containing a dummy dashboard. <a href="https://github.com/xqemu/xqemu-hdd-image/releases">You can download this image from
+here!</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By design, this particular drive image does not contain the official Xbox
+dashboard, but instead contains only a dummy dashboard. Because of this, you
+may see an error message when starting XQEMU with an unmodified retail BIOS
+image due to the system failing to find a properly signed dashboard.</p>
+<p>If you would like to change your dashboard (perhaps to the official retail
+dashboard, or any alternative dashboard), or copy additional files over to
+the Xbox HDD, you can start XQEMU, using a modified BIOS image, and a disc
+containing an alternative dashboard. Then you can either install that
+dashboard, or connect to XQEMU using FTP to transfer your desired dashboard
+files to the HDD.</p>
+</div>
+<h5 id="option-2-image-your-real-xbox-hdd">Option 2: Image your real Xbox HDD<a class="headerlink" href="#option-2-image-your-real-xbox-hdd" title="Permanent link">&para;</a></h5>
+<p>This is the most authentic way to do it. Unlock your drive, connect it to a
+computer, and <code>dd</code> the entire contents of the drive straight to a file. This
+file can be used as-is with XQEMU.</p>
+<h5 id="option-3-build-a-new-hdd-image-from-scratch">Option 3: Build a new HDD image from scratch<a class="headerlink" href="#option-3-build-a-new-hdd-image-from-scratch" title="Permanent link">&para;</a></h5>
+<p>You can also create an Xbox hard-disk image using XboxHDM. Directions on how
+to do this <a href="https://github.com/xqemu/xqemu-hdd-image">can be found here</a>.</p>
+<h2 id="building-xqemu-from-source">Building XQEMU from Source<a class="headerlink" href="#building-xqemu-from-source" title="Permanent link">&para;</a></h2>
+<h3 id="building-on-windows">Building on Windows<a class="headerlink" href="#building-on-windows" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you'd prefer to skip building from source and instead run a pre-built
+version of XQEMU for Windows, build artifacts are now available through
+<a href="https://ci.appveyor.com/project/mborgerson/xqemu-c5j6o/build/artifacts">Appveyor</a>.</p>
+</div>
+<p>Start by installing and setting up <a href="https://www.msys2.org/">MSYS2</a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>After installing MSYS2, you'll need to open <strong>MSYS2 MinGW 64-bit</strong> to
+perform building. Otherwise, you may see build failures for cc.exe.</p>
+</div>
+<p>Once MSYS2 has been installed, install all of the necessary packages by running:</p>
+<div class="codehilite"><pre><span></span>pacman -S git python2 make autoconf automake-wrapper \
+mingw-w64-x86_64-libtool mingw-w64-x86_64-gcc mingw-w64-x86_64-pkg-config \
+mingw-w64-x86_64-glib2 mingw-w64-x86_64-libepoxy mingw-w64-x86_64-SDL \
+mingw-w64-x86_64-SDL2 mingw-w64-x86_64-pixman
+</pre></div>
+
+
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Build failures have been reported when the path to the XQEMU root directory
+contains spaces. Please make sure to not have any whitespace in your build path.
+E.g: <code>C:\Users\User Name\xqemu\build.sh</code> will not work.</p>
+</div>
+<p>Clone the repo:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/xqemu/xqemu.git
+</pre></div>
+
+
+<p>Then change directory:</p>
+<div class="codehilite"><pre><span></span>cd xqemu
+</pre></div>
+
+
+<p>And build using the build script:</p>
+<div class="codehilite"><pre><span></span>sh ./build.sh
+</pre></div>
+
+
+<h3 id="building-on-gnulinux">Building on GNU/Linux<a class="headerlink" href="#building-on-gnulinux" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These instructions were tested with Ubuntu 18.04. Depending on the
+Linux distribution being used, these instructions may vary.</p>
+</div>
+<p>First enable <code>deb-src</code> via:</p>
+<div class="codehilite"><pre><span></span>sudo gedit /etc/apt/sources.list
+</pre></div>
+
+
+<p>In this file, uncomment first <code>deb-src</code> line. Now refresh packages:</p>
+<div class="codehilite"><pre><span></span>sudo apt-get update
+</pre></div>
+
+
+<p>Install build deps:</p>
+<div class="codehilite"><pre><span></span>sudo apt-get build-dep qemu
+sudo apt-get install git libsdl2-dev libepoxy-dev
+</pre></div>
+
+
+<p>Then clone the repo:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/xqemu/xqemu.git
+</pre></div>
+
+
+<p>Then change directory:</p>
+<div class="codehilite"><pre><span></span>cd xqemu
+</pre></div>
+
+
+<p>And build using the build script:</p>
+<div class="codehilite"><pre><span></span>./build.sh
+</pre></div>
+
+
+<h3 id="building-on-macos">Building on macOS<a class="headerlink" href="#building-on-macos" title="Permanent link">&para;</a></h3>
+<p>First make sure you've installed the <a href="https://brew.sh/">Homebrew</a> package
+manager, then update and install necessary packages:</p>
+<div class="codehilite"><pre><span></span>brew update
+brew install libffi gettext glib pixman pkg-config autoconf pixman sdl2 libepoxy
+</pre></div>
+
+
+<p>Clone the repo:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/xqemu/xqemu.git
+</pre></div>
+
+
+<p>Then change directory:</p>
+<div class="codehilite"><pre><span></span>cd xqemu
+</pre></div>
+
+
+<p>And build using the build script:</p>
+<div class="codehilite"><pre><span></span>./build.sh
+</pre></div>
+
+
+<h2 id="launch-xqemu">Launch XQEMU<a class="headerlink" href="#launch-xqemu" title="Permanent link">&para;</a></h2>
+<p>XQEMU is launchable via the command-line interface (though a GUI launcher is in
+development!) You can launch with the following command:</p>
+<div class="codehilite"><pre><span></span>./i386-softmmu/qemu-system-i386 \
+    -cpu pentium3 \
+    -machine xbox,bootrom=$MCPX \
+    -m 64 \
+    -bios $BIOS \
+    -drive index=0,media=disk,file=$HDD,locked \
+    -drive index=1,media=cdrom,file=$DISC \
+    -usb -device usb-xbox-gamepad
+</pre></div>
+
+
+<p>Of course, on Windows the executable path will have a <code>.exe</code> extension. If launching
+a pre-built binary from AppVeyor, replace <code>./i386-softmmu/qemu-system-i386</code> with
+<code>xqemu.exe</code>.</p>
+<p>Replace the variables <code>$MCPX</code>, <code>$BIOS</code>, <code>$HDD</code>, and <code>$DISC</code> with the appropriate
+file paths or define them as variables in your shell.</p>
+<p>The Xbox boot animation sequence can be bypassed by adding the
+<code>,short-animation</code> option to the <code>-machine</code> switch above.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../screenshots/" title="Screenshots" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Screenshots
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../input/" title="Input Devices" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Input Devices
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2018 XQEMU Developers
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
